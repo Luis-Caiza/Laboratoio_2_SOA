@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace ServicioClientesSOA.Services
 {
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://tempuri.org/")]
     public interface IClienteService
     {
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/IClienteService/ListarClientes", ReplyAction = "http://tempuri.org/IClienteService/ListarClientesResponse")]
         List<Cliente> ListarClientes();
 
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/IClienteService/InsertarCliente", ReplyAction = "http://tempuri.org/IClienteService/InsertarClienteResponse")]
         void InsertarCliente(Cliente cliente);
     }
 }

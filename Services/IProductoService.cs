@@ -4,22 +4,22 @@ using System.Collections.Generic;
 
 namespace ServicioClientesSOA.Services
 {
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://tempuri.org/")]
     public interface IProductoService
     {
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/IProductoService/ListarProductos", ReplyAction = "http://tempuri.org/IProductoService/ListarProductosResponse")]
         List<Producto> ListarProductos();
 
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/IProductoService/ObtenerProductoPorId", ReplyAction = "http://tempuri.org/IProductoService/ObtenerProductoPorIdResponse")]
         Producto ObtenerProductoPorId(int id);
 
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/IProductoService/InsertarProducto", ReplyAction = "http://tempuri.org/IProductoService/InsertarProductoResponse")]
         void InsertarProducto(Producto producto);
 
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/IProductoService/ActualizarProducto", ReplyAction = "http://tempuri.org/IProductoService/ActualizarProductoResponse")]
         void ActualizarProducto(Producto producto);
 
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/IProductoService/EliminarProducto", ReplyAction = "http://tempuri.org/IProductoService/EliminarProductoResponse")]
         void EliminarProducto(int id);
     }
 }

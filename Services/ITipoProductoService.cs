@@ -4,22 +4,22 @@ using System.Collections.Generic;
 
 namespace ServicioClientesSOA.Services
 {
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://tempuri.org/")]
     public interface ITipoProductoService
     {
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/ITipoProductoService/ListarTipoProductos", ReplyAction = "http://tempuri.org/ITipoProductoService/ListarTipoProductosResponse")]
         List<TipoProducto> ListarTipoProductos();
 
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/ITipoProductoService/ObtenerTipoProductoPorId", ReplyAction = "http://tempuri.org/ITipoProductoService/ObtenerTipoProductoPorIdResponse")]
         TipoProducto ObtenerTipoProductoPorId(int id);
 
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/ITipoProductoService/InsertarTipoProducto", ReplyAction = "http://tempuri.org/ITipoProductoService/InsertarTipoProductoResponse")]
         void InsertarTipoProducto(TipoProducto tipoProducto);
 
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/ITipoProductoService/ActualizarTipoProducto", ReplyAction = "http://tempuri.org/ITipoProductoService/ActualizarTipoProductoResponse")]
         void ActualizarTipoProducto(TipoProducto tipoProducto);
 
-        [OperationContract]
+        [OperationContract(Action = "http://tempuri.org/ITipoProductoService/EliminarTipoProducto", ReplyAction = "http://tempuri.org/ITipoProductoService/EliminarTipoProductoResponse")]
         void EliminarTipoProducto(int id);
     }
 }

@@ -21,7 +21,7 @@ namespace ServicioClientesSOA.Services
 
         public TipoProducto ObtenerTipoProductoPorId(int id)
         {
-            return _context.TipoProductos.Find(id);
+            return _context.TipoProductos.Find(id) ?? new TipoProducto();
         }
 
         public void InsertarTipoProducto(TipoProducto tipoProducto)

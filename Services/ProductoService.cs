@@ -26,7 +26,7 @@ namespace ServicioClientesSOA.Services
         {
             return _context.Productos
                 .Include(p => p.TipoProducto)
-                .FirstOrDefault(p => p.Id == id);
+                .FirstOrDefault(p => p.Id == id) ?? new Producto();
         }
 
         public void InsertarProducto(Producto producto)
